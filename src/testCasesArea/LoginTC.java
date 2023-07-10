@@ -1,4 +1,4 @@
-package testCases;
+package testCasesArea;
 
 import java.time.Duration;
 import java.util.concurrent.TimeUnit;
@@ -25,9 +25,5 @@ public class LoginTC extends BaseSetup{
 	public void VerifyLogin_01()
 	{
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-		
-		//Assert.assertEquals(originalSubject,"Greetings from Voice Channel");
-		//Assert.assertEquals(editedSubject,"Greetings from Voice Channel edited");
-		
 	}
 }
