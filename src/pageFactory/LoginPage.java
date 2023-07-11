@@ -56,6 +56,7 @@ public class LoginPage {
         PageFactory.initElements(driver, this);
 	}
 	
+	
 	public void setUsername(String strUsername )
 	{
 		username.sendKeys(strUsername);
@@ -67,6 +68,7 @@ public class LoginPage {
 		 password.sendKeys(strPassword);
 	}
 
+    
 	 public void clickLogin(){
 		 
 		 new WebDriverWait(driver, Duration.ofSeconds(20)).until(ExpectedConditions.visibilityOf(this.cloudLoginButton)).click();
@@ -128,7 +130,7 @@ public class LoginPage {
 		new WebDriverWait(driver, Duration.ofSeconds(20)).until(ExpectedConditions.visibilityOf(this.centionLogo)).click();
 	}
 	
-	
+	//test comment as sofea 
 	public String userLockErrorMessage()
 	{
 		
