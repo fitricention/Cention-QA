@@ -20,11 +20,11 @@ public class Features {
 
 	public void enableShowAPopUpMessageOtherContacts()
 	{
-		String value = new WebDriverWait(driver, 10).until(ExpectedConditions.visibilityOf(this.showAPopupMessageUnderOtherContacts)).getAttribute("value");
+		//String value = new WebDriverWait(driver, 10).until(ExpectedConditions.visibilityOf(this.showAPopupMessageUnderOtherContacts)).getAttribute("value");
 		System.out.println(value);
 		if (value.equals("true"))
 		{
-			System.out.println("Already showAPopupMessageUnderOtherContacts is enabled");	
+			System.out.println("Already showAPopupMessageUnderOtherContacts is enabled.");	
 		}
 		else
 		{
