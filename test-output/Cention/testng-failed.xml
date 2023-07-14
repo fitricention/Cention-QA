@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Cention]">
+  <parameter name="browser" value="chrome"/>
+  <test name="login(failed)">
+    <parameter name="browser" value="chrome"/>
+    <classes>
+      <class name="testCasesArea.LoginTC">
+        <methods>
+          <include name="Base"/>
+          <include name="VerifyLogin_01"/>
+        </methods>
+      </class> <!-- testCasesArea.LoginTC -->
+    </classes>
+  </test> <!-- login(failed) -->
+</suite> <!-- Failed suite [Cention] -->

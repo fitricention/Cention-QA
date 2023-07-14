@@ -19,11 +19,15 @@ public class LoginTC extends BaseSetup{
 		//Log in to application
 		LoginPage objLogin = new LoginPage(driver);
 		objLogin.loginToApplication("tobias","fitri","123456789");
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
+		
 	}
 	
 	@Test
-	public void VerifyLogin_01()
+	public void VerifyLogout_01()
 	{
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+		LoginPage objLogin = new LoginPage(driver);
+		objLogin.logout();
+	   // Assert.assertEquals(actual, expected);
 	}
 }

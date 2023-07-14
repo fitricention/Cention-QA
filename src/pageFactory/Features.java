@@ -1,5 +1,7 @@
 package pageFactory;
 
+import java.time.Duration;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -28,10 +30,10 @@ public class Features {
 		}
 		else
 		{
-		new WebDriverWait(driver, 10).until(ExpectedConditions.visibilityOf(this.showAPopupMessageUnderOtherContacts)).click();
+		new WebDriverWait(driver, Duration.ofSeconds(10)).until(ExpectedConditions.visibilityOf(this.showAPopupMessageUnderOtherContacts)).click();
 		Select option = new Select(this.showAPopupMessageUnderOtherContacts);
 		option.selectByVisibleText("true");
-		new WebDriverWait(driver, 10).until(ExpectedConditions.visibilityOf(this.setshowAPopupMessageUnderOtherContacts)).click();
+		new WebDriverWait(driver, Duration.ofSeconds(10)).until(ExpectedConditions.visibilityOf(this.setshowAPopupMessageUnderOtherContacts)).click();
 		System.out.println("showAPopupMessageUnderOtherContacts is enabled");	
 		}
 

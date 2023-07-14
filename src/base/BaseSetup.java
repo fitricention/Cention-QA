@@ -79,10 +79,10 @@ public class BaseSetup {
 				throw new Exception("Browser is not correct");
 			}
 		
-		  driver.get("https://cloud-qa.cention.com/");
+		  driver.get("https://cloud-qa.cention.com");
 		  System.out.println(driver.getTitle());
-		  driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
-		  driver.manage().window().maximize();
+		  //driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
+		  //driver.manage().window().maximize();
 			
 		 return driver;
 		 }
