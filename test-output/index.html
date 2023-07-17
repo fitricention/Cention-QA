@@ -48,7 +48,7 @@
               <ul>
                 <li>
                   <a href="#" class="navigator-link " panel-name="test-xml-cention-QA">
-                    <span>C:\Users\Acer\workspace\CloudQATestCases\cention-QA\LoginTC-TestNG\testNG.xml</span>
+                    <span>C:\Users\Acer\workspace\CloudQATestCases\cention-QA\TestNG - Errand And Workflow\testNG.xml</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -90,7 +90,7 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">2 methods,   2 passed</span>
+                    <span class="method-stats">1 method,   1 passed</span>
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -101,12 +101,7 @@
                     <div class="method-list-content passed suite-cention-QA">
                       <span>
                         <img width="3%" src="passed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-cention-QA" title="testCasesArea.LoginTC" hash-for-method="VerifyLogout_01">VerifyLogout_01</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img width="3%" src="passed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-cention-QA" title="testCasesArea.LoginTC" hash-for-method="loginToApplication">loginToApplication</a> <!-- method navigator-link -->
+                        <a href="#" class="method navigator-link" panel-name="suite-cention-QA" title="testCasesArea.ErrandAndWorkflowTC" hash-for-method="verifyCreateNewErrand_01">verifyCreateNewErrand_01</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content passed suite-cention-QA -->
@@ -124,21 +119,14 @@
           <div class="suite-cention-QA-class-passed">
             <div class="main-panel-header rounded-window-top">
               <img src="passed.png"/>
-              <span class="class-name">testCasesArea.LoginTC</span>
+              <span class="class-name">testCasesArea.ErrandAndWorkflowTC</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="VerifyLogout_01">
-                  </a> <!-- VerifyLogout_01 -->
-                  <span class="method-name">VerifyLogout_01</span>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="loginToApplication">
-                  </a> <!-- loginToApplication -->
-                  <span class="method-name">loginToApplication</span>
+                  <a name="verifyCreateNewErrand_01">
+                  </a> <!-- verifyCreateNewErrand_01 -->
+                  <span class="method-name">verifyCreateNewErrand_01</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
@@ -146,7 +134,7 @@
         </div> <!-- panel cention-QA -->
         <div panel-name="test-xml-cention-QA" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">C:\Users\Acer\workspace\CloudQATestCases\cention-QA\LoginTC-TestNG\testNG.xml</span>
+            <span class="header-content">C:\Users\Acer\workspace\CloudQATestCases\cention-QA\TestNG - Errand And Workflow\testNG.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
@@ -156,12 +144,11 @@
   &lt;test name=&quot;login&quot;&gt;
     &lt;parameter name=&quot;browser&quot; value=&quot;chrome&quot;/&gt;
     &lt;classes&gt;
-      &lt;class name=&quot;testCasesArea.LoginTC&quot;&gt;
+      &lt;class name=&quot;testCasesArea.ErrandAndWorkflowTC&quot;&gt;
         &lt;methods&gt;
-          &lt;include name=&quot;loginToApplication&quot;/&gt;
-          &lt;include name=&quot;VerifyLogout_01&quot;/&gt;
+          &lt;include name=&quot;verifyCreateNewErrand_01&quot;/&gt;
         &lt;/methods&gt;
-      &lt;/class&gt; &lt;!-- testCasesArea.LoginTC --&gt;
+      &lt;/class&gt; &lt;!-- testCasesArea.ErrandAndWorkflowTC --&gt;
     &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- login --&gt;
 &lt;/suite&gt; &lt;!-- cention-QA --&gt;
@@ -201,20 +188,16 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(2);
+data.addRows(1);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'loginToApplication')
-data.setCell(0, 2, 'testCasesArea.LoginTC')
-data.setCell(0, 3, 11203);
-data.setCell(1, 0, 1)
-data.setCell(1, 1, 'VerifyLogout_01')
-data.setCell(1, 2, 'testCasesArea.LoginTC')
-data.setCell(1, 3, 8545);
+data.setCell(0, 1, 'verifyCreateNewErrand_01')
+data.setCell(0, 2, 'testCasesArea.ErrandAndWorkflowTC')
+data.setCell(0, 3, 17181);
 window.suiteTableData['cention-QA']= { tableData: data, tableDiv: 'times-div-cention-QA'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 19 seconds</span>
+              <span class="suite-total-time">Total running time: 17 seconds</span>
               <div id="times-div-cention-QA">
               </div> <!-- times-div-cention-QA -->
             </div> <!-- times-div -->
@@ -240,22 +223,22 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
-              <div class="chronological-class-name">testCasesArea.LoginTC</div> <!-- chronological-class-name -->
+              <div class="chronological-class-name">testCasesArea.ErrandAndWorkflowTC</div> <!-- chronological-class-name -->
               <div class="configuration-class before">
                 <span class="method-name">Base(chrome)</span>
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-class before -->
-              <div class="test-method">
+              <div class="configuration-class before">
                 <span class="method-name">loginToApplication</span>
-                <span class="method-start">3140 ms</span>
-              </div> <!-- test-method -->
+                <span class="method-start">3827 ms</span>
+              </div> <!-- configuration-class before -->
               <div class="test-method">
-                <span class="method-name">VerifyLogout_01</span>
-                <span class="method-start">14344 ms</span>
+                <span class="method-name">verifyCreateNewErrand_01</span>
+                <span class="method-start">15771 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-class after">
                 <span class="method-name">tearDown</span>
-                <span class="method-start">22889 ms</span>
+                <span class="method-start">32954 ms</span>
               </div> <!-- configuration-class after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

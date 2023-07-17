@@ -5,13 +5,14 @@
   <test name="login(failed)">
     <parameter name="browser" value="chrome"/>
     <classes>
-      <class name="testCasesArea.LoginTC">
+      <class name="testCasesArea.ErrandAndWorkflowTC">
         <methods>
-          <include name="loginToApplication"/>
           <include name="tearDown"/>
           <include name="Base"/>
+          <include name="loginToApplication"/>
+          <include name="verifyCreateNewErrand_01"/>
         </methods>
-      </class> <!-- testCasesArea.LoginTC -->
+      </class> <!-- testCasesArea.ErrandAndWorkflowTC -->
     </classes>
   </test> <!-- login(failed) -->
 </suite> <!-- Failed suite [cention-QA] -->

@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" total="2" passed="2">
+<testng-results skipped="0" failed="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="cention-QA" duration-ms="23024" started-at="2023-07-17T03:22:30Z" finished-at="2023-07-17T03:22:53Z">
+  <suite name="cention-QA" duration-ms="33164" started-at="2023-07-17T07:26:06Z" finished-at="2023-07-17T07:26:39Z">
     <groups>
     </groups>
-    <test name="login" duration-ms="23024" started-at="2023-07-17T03:22:30Z" finished-at="2023-07-17T03:22:53Z">
-      <class name="testCasesArea.LoginTC">
-        <test-method status="PASS" signature="Base(java.lang.String)[pri:0, instance:testCasesArea.LoginTC@4411d970]" name="Base" is-config="true" duration-ms="3139" started-at="2023-07-17T11:22:30Z" finished-at="2023-07-17T11:22:33Z">
+    <test name="login" duration-ms="33164" started-at="2023-07-17T07:26:06Z" finished-at="2023-07-17T07:26:39Z">
+      <class name="testCasesArea.ErrandAndWorkflowTC">
+        <test-method status="PASS" signature="Base(java.lang.String)[pri:0, instance:testCasesArea.ErrandAndWorkflowTC@4411d970]" name="Base" is-config="true" duration-ms="3827" started-at="2023-07-17T15:26:06Z" finished-at="2023-07-17T15:26:09Z">
           <params>
             <param index="0">
               <value>
@@ -18,19 +18,19 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Base -->
-        <test-method status="PASS" signature="loginToApplication()[pri:0, instance:testCasesArea.LoginTC@4411d970]" name="loginToApplication" duration-ms="11203" started-at="2023-07-17T11:22:33Z" finished-at="2023-07-17T11:22:45Z">
+        <test-method status="PASS" signature="loginToApplication()[pri:0, instance:testCasesArea.ErrandAndWorkflowTC@4411d970]" name="loginToApplication" is-config="true" duration-ms="11943" started-at="2023-07-17T15:26:09Z" finished-at="2023-07-17T15:26:21Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- loginToApplication -->
-        <test-method status="PASS" signature="VerifyLogout_01()[pri:0, instance:testCasesArea.LoginTC@4411d970]" name="VerifyLogout_01" duration-ms="8545" started-at="2023-07-17T11:22:45Z" finished-at="2023-07-17T11:22:53Z">
+        <test-method status="PASS" signature="verifyCreateNewErrand_01()[pri:0, instance:testCasesArea.ErrandAndWorkflowTC@4411d970]" name="verifyCreateNewErrand_01" duration-ms="17181" started-at="2023-07-17T15:26:21Z" finished-at="2023-07-17T15:26:39Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- VerifyLogout_01 -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:testCasesArea.LoginTC@4411d970]" name="tearDown" is-config="true" duration-ms="130" started-at="2023-07-17T11:22:53Z" finished-at="2023-07-17T11:22:53Z">
+        </test-method> <!-- verifyCreateNewErrand_01 -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:testCasesArea.ErrandAndWorkflowTC@4411d970]" name="tearDown" is-config="true" duration-ms="202" started-at="2023-07-17T15:26:39Z" finished-at="2023-07-17T15:26:39Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-      </class> <!-- testCasesArea.LoginTC -->
+      </class> <!-- testCasesArea.ErrandAndWorkflowTC -->
     </test> <!-- login -->
   </suite> <!-- cention-QA -->
 </testng-results>
