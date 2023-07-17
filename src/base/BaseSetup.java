@@ -80,23 +80,15 @@ public class BaseSetup {
 			}
 		
 		  driver.get("https://cloud-qa.cention.com");
-		  System.out.println(driver.getTitle());
-		  //driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
-		  //driver.manage().window().maximize();
+		  driver.manage().window().maximize();
+		 // System.out.println(driver.getTitle());
+		 // driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
 			
 		 return driver;
 		 }
 	
 	
-		
-		  
-	
-	/* @After public void cleanUp()
-	 {
-		 
-		 driver.manage().deleteAllCookies();
-		 }*/
-	 @AfterClass public static void tearDown()
+	@AfterClass public static void tearDown()
 	 {
 		 driver.manage().deleteAllCookies();
 		 driver.close();

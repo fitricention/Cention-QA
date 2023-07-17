@@ -7,13 +7,11 @@
 	<classes>
 		<class name="testCasesArea.LoginTC">
 			<methods>
-				<include name="VerifyLogin_01"/>
+			    <include name="loginToApplication"/>
+				<include name="VerifyLogout_01"/>
 			</methods>
 		</class>
 
 	</classes>
 </test>
-
-
-
 </suite>

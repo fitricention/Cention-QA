@@ -31,10 +31,10 @@ public class LoginPage extends BaseSetup{
 	WebElement login_errormessage;
 
 	//@FindBy(css="[data-qa-id='agent_menu_logout']")
-	@FindBy(css="/html/body/div[5]/div/div/div/div/ul/li[2]/div[2]/div/div/ul/li[8]/a/div[2]/span")
+	@FindBy(xpath="/html/body/div[5]/div/div/div/div/ul/li[2]/div[2]/div/div/ul/li[8]/a/div[2]/span")
 	WebElement logout;
 	
-	@FindBy(className="header-logo")
+	@FindBy(className="app-logo")
 	WebElement centionLogo;
 	
 	//@FindBy(css="[data-qa-id='login-lock-error']")
@@ -90,8 +90,9 @@ public class LoginPage extends BaseSetup{
 	
 	        
 	     String pageTitleAfterLogin = driver.getTitle();
-	       
-	        //System.out.println(pageTitleAfterLogin);
+	        System.out.println(pageTitleAfterLogin);
+
+	     
 	     return pageTitleAfterLogin;     
 	 }
 	
@@ -113,11 +114,18 @@ public class LoginPage extends BaseSetup{
 				return filePresent;}
 		 }
 	
-	public void logout()
+	public void clickLogout()
 	{
 		new WebDriverWait(driver, Duration.ofSeconds(20)).until(ExpectedConditions.visibilityOf(this.userProfile)).click();	 
 		new WebDriverWait(driver, Duration.ofSeconds(20)).until(ExpectedConditions.visibilityOf(this.logout)).click();
-		 
+	}
+	
+	public boolean verifyLogout(){
+		if(new WebDriverWait(driver, Duration.ofSeconds(20)).until(ExpectedConditions.visibilityOf(this.centionLogo)).isDisplayed()){
+			return true;
+		}
+		return false;
+	
 	}
 	
 	public void AdminPagelogout()
