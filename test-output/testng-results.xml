@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" total="1" passed="1">
+<testng-results skipped="0" failed="1" total="3" passed="2">
   <reporter-output>
   </reporter-output>
-  <suite name="cention-QA" duration-ms="33164" started-at="2023-07-17T07:26:06Z" finished-at="2023-07-17T07:26:39Z">
+  <suite name="cention-QA" duration-ms="37474" started-at="2023-07-18T07:52:18Z" finished-at="2023-07-18T07:52:56Z">
     <groups>
     </groups>
-    <test name="login" duration-ms="33164" started-at="2023-07-17T07:26:06Z" finished-at="2023-07-17T07:26:39Z">
+    <test name="login" duration-ms="37474" started-at="2023-07-18T07:52:18Z" finished-at="2023-07-18T07:52:56Z">
       <class name="testCasesArea.ErrandAndWorkflowTC">
-        <test-method status="PASS" signature="Base(java.lang.String)[pri:0, instance:testCasesArea.ErrandAndWorkflowTC@4411d970]" name="Base" is-config="true" duration-ms="3827" started-at="2023-07-17T15:26:06Z" finished-at="2023-07-17T15:26:09Z">
+        <test-method status="PASS" signature="Base(java.lang.String)[pri:0, instance:testCasesArea.ErrandAndWorkflowTC@45afc369]" name="Base" is-config="true" duration-ms="2954" started-at="2023-07-18T15:52:18Z" finished-at="2023-07-18T15:52:21Z">
           <params>
             <param index="0">
               <value>
@@ -18,15 +18,93 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Base -->
-        <test-method status="PASS" signature="loginToApplication()[pri:0, instance:testCasesArea.ErrandAndWorkflowTC@4411d970]" name="loginToApplication" is-config="true" duration-ms="11943" started-at="2023-07-17T15:26:09Z" finished-at="2023-07-17T15:26:21Z">
+        <test-method status="PASS" signature="loginToApplication()[pri:0, instance:testCasesArea.ErrandAndWorkflowTC@45afc369]" name="loginToApplication" is-config="true" duration-ms="11728" started-at="2023-07-18T15:52:21Z" finished-at="2023-07-18T15:52:33Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- loginToApplication -->
-        <test-method status="PASS" signature="verifyCreateNewErrand_01()[pri:0, instance:testCasesArea.ErrandAndWorkflowTC@4411d970]" name="verifyCreateNewErrand_01" duration-ms="17181" started-at="2023-07-17T15:26:21Z" finished-at="2023-07-17T15:26:39Z">
+        <test-method status="PASS" signature="verifyAllComponentsInManualErrandPage_01()[pri:0, instance:testCasesArea.ErrandAndWorkflowTC@45afc369]" name="verifyAllComponentsInManualErrandPage_01" duration-ms="7451" started-at="2023-07-18T15:52:33Z" finished-at="2023-07-18T15:52:40Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- verifyCreateNewErrand_01 -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:testCasesArea.ErrandAndWorkflowTC@4411d970]" name="tearDown" is-config="true" duration-ms="202" started-at="2023-07-17T15:26:39Z" finished-at="2023-07-17T15:26:39Z">
+        </test-method> <!-- verifyAllComponentsInManualErrandPage_01 -->
+        <test-method status="PASS" signature="verifyCreateManualErrand_02()[pri:0, instance:testCasesArea.ErrandAndWorkflowTC@45afc369]" name="verifyCreateManualErrand_02" duration-ms="13432" started-at="2023-07-18T15:52:40Z" finished-at="2023-07-18T15:52:54Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyCreateManualErrand_02 -->
+        <test-method status="FAIL" signature="verifySendManualErrand_03()[pri:0, instance:testCasesArea.ErrandAndWorkflowTC@45afc369]" name="verifySendManualErrand_03" duration-ms="1429" started-at="2023-07-18T15:52:54Z" finished-at="2023-07-18T15:52:55Z">
+          <exception class="org.openqa.selenium.ElementClickInterceptedException">
+            <message>
+              <![CDATA[element click intercepted: Element <button type="button" class="btn-transparent disabled" data-qa-id="QA_showManualErrand" disabled="">...</button> is not clickable at point (97, 727). Other element would receive the click: <div class="errand-inner-back" data-qa-id="errand-inner-back-select" style="z-index: 500; position: absolute; height: 100%; width: 100%;"></div>
+  (Session info: chrome=114.0.5735.199)
+Build info: version: '4.10.0', revision: 'c14d967899'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_321'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [dc51a93f09b423898b1080f0303fe572, clickElement {id=FF1050B327BEB97F776B762C0AF95008_element_37}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 114.0.5735.199, chrome: {chromedriverVersion: 114.0.5735.16 (7e1ff058633f..., userDataDir: C:\Users\Acer\AppData\Local...}, goog:chromeOptions: {debuggerAddress: localhost:59542}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:59542/devtoo..., se:cdpVersion: 114.0.5735.199, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on windows (dc51a93f09b423898b1080f0303fe572)] -> css selector: [data-qa-id='QA_showManualErrand']]
+Session ID: dc51a93f09b423898b1080f0303fe572]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element <button type="button" class="btn-transparent disabled" data-qa-id="QA_showManualErrand" disabled="">...</button> is not clickable at point (97, 727). Other element would receive the click: <div class="errand-inner-back" data-qa-id="errand-inner-back-select" style="z-index: 500; position: absolute; height: 100%; width: 100%;"></div>
+  (Session info: chrome=114.0.5735.199)
+Build info: version: '4.10.0', revision: 'c14d967899'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_321'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [dc51a93f09b423898b1080f0303fe572, clickElement {id=FF1050B327BEB97F776B762C0AF95008_element_37}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 114.0.5735.199, chrome: {chromedriverVersion: 114.0.5735.16 (7e1ff058633f..., userDataDir: C:\Users\Acer\AppData\Local...}, goog:chromeOptions: {debuggerAddress: localhost:59542}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:59542/devtoo..., se:cdpVersion: 114.0.5735.199, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on windows (dc51a93f09b423898b1080f0303fe572)] -> css selector: [data-qa-id='QA_showManualErrand']]
+Session ID: dc51a93f09b423898b1080f0303fe572
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
+	at java.lang.reflect.Constructor.newInstance(Unknown Source)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:199)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:132)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:51)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:191)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:196)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:171)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:531)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:242)
+	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:77)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:51)
+	at com.sun.proxy.$Proxy15.click(Unknown Source)
+	at pageFactory.CreateErrand.clickSendErrandTab(CreateErrand.java:231)
+	at testCasesArea.ErrandAndWorkflowTC.verifySendManualErrand_03(ErrandAndWorkflowTC.java:54)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:85)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:663)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:849)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1157)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:124)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:108)
+	at org.testng.TestRunner.privateRun(TestRunner.java:771)
+	at org.testng.TestRunner.run(TestRunner.java:621)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:357)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:352)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:310)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:259)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1200)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1125)
+	at org.testng.TestNG.run(TestNG.java:1033)
+	at org.testng.remote.RemoteTestNG.run(RemoteTestNG.java:111)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:204)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:175)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.ElementClickInterceptedException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifySendManualErrand_03 -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:testCasesArea.ErrandAndWorkflowTC@45afc369]" name="tearDown" is-config="true" duration-ms="148" started-at="2023-07-18T15:52:56Z" finished-at="2023-07-18T15:52:56Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->

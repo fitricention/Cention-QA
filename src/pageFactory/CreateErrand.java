@@ -18,7 +18,10 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 public class CreateErrand {
 
 WebDriver driver;
-	
+
+	@FindBy(how = How.CLASS_NAME, using = "wrap-errand")
+	WebElement manualErrandBox;
+
 	@FindBy(how = How.XPATH, using = "//*[@id='container']/div/div[1]/div/div[1]/div[1]/span[1]")
 	WebElement createErrandTab;
 	
@@ -78,6 +81,7 @@ WebDriver driver;
 	
 	@FindBy(how = How.CSS, using = "[data-qa-id='QA_btn_send']")
 	WebElement sendButton;
+	
 	@FindBy(how = How.XPATH, using = "//*[@id='container']/div/div[1]/div/div[1]/div[2]/form/div[9]/button[2]")
 	//@FindBy(how = How.CLASS_NAME, using = "btn-blue")
 	WebElement manualDoneButton;
@@ -129,6 +133,10 @@ WebDriver driver;
 	//.block-checkboxes:nth-child(8) .icon-staple
 	@FindBy(how = How.CSS, using = "div.block-checkboxes > div.right-sidebar > div > div.reply-editor-action.errand-file > a > i")
 	WebElement attachFileButton;
+	
+	@FindBy(how = How.CSS, using = "[data-qa-id='QA_attachFile']")
+	WebElement attachmentOption;
+	
 	
 	@FindBy(how = How.LINK_TEXT, using = "Choose archive file")
 	WebElement chooseArchiveFileButton;
@@ -218,6 +226,13 @@ WebDriver driver;
 
 	}
 	
+	public void clickSendErrandTab()
+	{
+		new WebDriverWait(driver, Duration.ofSeconds(10)).until(ExpectedConditions.visibilityOf(this.createButton)).click();	
+
+	}
+	
+	
 	public void clickSelectArea()
 	{
 		//new WebDriverWait(driver, Duration.ofSeconds(10)).until(ExpectedConditions.visibilityOf(this.selectArea)).click();
@@ -256,6 +271,22 @@ WebDriver driver;
 		
 	}
 	
+	public void fillToField(String From) throws AWTException
+	{
+		try{
+			   Thread.sleep(3000);
+			  }catch (InterruptedException ie1) {
+			    ie1.printStackTrace();
+			  }
+		new WebDriverWait(driver, Duration.ofSeconds(10)).until(ExpectedConditions.visibilityOf(this.toField)).click();
+		new WebDriverWait(driver, Duration.ofSeconds(10)).until(ExpectedConditions.visibilityOf(this.toField)).sendKeys(From);
+		/*Robot r = new Robot();
+		
+		  r.keyPress(java.awt.event.KeyEvent.VK_ENTER);
+		  r.keyRelease(java.awt.event.KeyEvent.VK_ENTER);
+		  r.delay(500);*/
+		
+	}
 	
 	public void fillSubject (String Subject)
 	{
@@ -278,9 +309,38 @@ WebDriver driver;
 	{
 		new WebDriverWait(driver, Duration.ofSeconds(10)).until(ExpectedConditions.visibilityOf(this.createButton2)).click();
 		boolean actual = new WebDriverWait(driver, Duration.ofSeconds(10)).until(ExpectedConditions.visibilityOf(this.errandNumber)).isDisplayed();
+		new WebDriverWait(driver, Duration.ofSeconds(10)).until(ExpectedConditions.visibilityOf(this.sendButton)).click();
+		//display Errand ID
+		return actual;
+	}
+	
+	public boolean clickSendBtn ()
+	{
+		new WebDriverWait(driver, Duration.ofSeconds(10)).until(ExpectedConditions.visibilityOf(this.sendButton)).click();
+		boolean actual = new WebDriverWait(driver, Duration.ofSeconds(10)).until(ExpectedConditions.visibilityOf(this.errandNumber)).isDisplayed();
 		
 		//display Errand ID
 		return actual;
 	}
 	
+	
+	public void viewAttachmentOption(){
+		new WebDriverWait(driver, Duration.ofSeconds(10)).until(ExpectedConditions.visibilityOf(this.attachmentOption)).isDisplayed();
+	}
+	
+	public void viewErrandID(){
+		new WebDriverWait(driver, Duration.ofSeconds(10)).until(ExpectedConditions.visibilityOf(this.errandNumber)).isDisplayed();
+	}
+	
+	public void viewKnowledgeBase(){
+		new WebDriverWait(driver, Duration.ofSeconds(10)).until(ExpectedConditions.visibilityOf(this.openKnowledgeBase)).isDisplayed();
+	}
+	
+	public void viewErrandTypesBox(){
+		new WebDriverWait(driver, Duration.ofSeconds(10)).until(ExpectedConditions.visibilityOf(this.selectBox)).isDisplayed();
+	}
+	
+	public boolean viewManualErrandBox(){
+		return new WebDriverWait(driver, Duration.ofSeconds(10)).until(ExpectedConditions.visibilityOf(this.manualErrandBox)).isDisplayed();
+	}
 }

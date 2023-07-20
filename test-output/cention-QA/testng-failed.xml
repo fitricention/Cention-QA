@@ -2,15 +2,18 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite guice-stage="DEVELOPMENT" name="Failed suite [cention-QA]">
   <parameter name="browser" value="chrome"/>
+  <listeners>
+    <listener class-name="base.Listeners"/>
+  </listeners>
   <test name="login(failed)">
     <parameter name="browser" value="chrome"/>
     <classes>
       <class name="testCasesArea.ErrandAndWorkflowTC">
         <methods>
           <include name="tearDown"/>
+          <include name="verifySendManualErrand_03"/>
           <include name="Base"/>
           <include name="loginToApplication"/>
-          <include name="verifyCreateNewErrand_01"/>
         </methods>
       </class> <!-- testCasesArea.ErrandAndWorkflowTC -->
     </classes>
