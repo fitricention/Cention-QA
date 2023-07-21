@@ -105,6 +105,7 @@ public class BaseSetup {
 	 {
 		 driver.manage().deleteAllCookies();
 		 driver.close();
+
 	 }
 	
 }

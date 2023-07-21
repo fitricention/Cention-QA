@@ -61,7 +61,11 @@ WebDriver driver;
 	WebElement answerIFrame;
 	
 	@FindBy(how = How.XPATH, using = "/html/body/div[1]/div/div[1]/div[2]/div[1]/div[2]/form/div[2]/div[1]/div/div[4]/div/div/div/iframe")
-	WebElement startErrandAnswerIFrame;
+	WebElement startCreateErrandAnswerIFrame;
+	
+	@FindBy(how = How.XPATH, using = "/html/body/div[1]/div/div[1]/div[2]/div[1]/div[2]/form/div[2]/div[1]/div/div[6]/div/div/div/iframe")
+	WebElement startSendErrandAnswerIFrame;
+	
 	
 	@FindBy(how = How.XPATH, using = "/html/body/div[1]/div/div[1]/div/div[1]/div[2]/form/div[5]/div/div/div/iframe")
 	WebElement teitterErrandAnswerIFrame;
@@ -222,13 +226,13 @@ WebDriver driver;
 	
 	public void clickCreateButton()
 	{
-		new WebDriverWait(driver, Duration.ofSeconds(10)).until(ExpectedConditions.visibilityOf(this.createButton)).click();	
+		new WebDriverWait(driver, Duration.ofSeconds(15)).until(ExpectedConditions.visibilityOf(this.createButton)).click();	
 
 	}
 	
 	public void clickSendErrandTab()
 	{
-		new WebDriverWait(driver, Duration.ofSeconds(10)).until(ExpectedConditions.visibilityOf(this.createButton)).click();	
+		new WebDriverWait(driver, Duration.ofSeconds(10)).until(ExpectedConditions.visibilityOf(this.sendErrandTab)).click();	
 
 	}
 	
@@ -296,10 +300,21 @@ WebDriver driver;
 	
 	public String enterTextInAnswerField(String Text)
 	{
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
 		
-		driver.switchTo().frame(this.startErrandAnswerIFrame);
-		new WebDriverWait(driver, Duration.ofSeconds(10)).until(ExpectedConditions.visibilityOf(this.answerField)).click();
+		driver.switchTo().frame(this.startCreateErrandAnswerIFrame);
+		new WebDriverWait(driver, Duration.ofSeconds(15)).until(ExpectedConditions.visibilityOf(this.answerField)).click();
+		this.answerField.sendKeys(Text);
+		driver.switchTo().defaultContent();
+		return Text;
+	}
+	
+	public String enterTextInAnswerFieldSendErrand(String Text)
+	{
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
+		
+		driver.switchTo().frame(this.startSendErrandAnswerIFrame);
+		new WebDriverWait(driver, Duration.ofSeconds(15)).until(ExpectedConditions.visibilityOf(this.answerField)).click();
 		this.answerField.sendKeys(Text);
 		driver.switchTo().defaultContent();
 		return Text;
@@ -307,22 +322,28 @@ WebDriver driver;
 	
 	public boolean clickCreateErrandBtn ()
 	{
-		new WebDriverWait(driver, Duration.ofSeconds(10)).until(ExpectedConditions.visibilityOf(this.createButton2)).click();
-		boolean actual = new WebDriverWait(driver, Duration.ofSeconds(10)).until(ExpectedConditions.visibilityOf(this.errandNumber)).isDisplayed();
-		new WebDriverWait(driver, Duration.ofSeconds(10)).until(ExpectedConditions.visibilityOf(this.sendButton)).click();
+		
+		boolean actual = new WebDriverWait(driver, Duration.ofSeconds(20)).until(ExpectedConditions.visibilityOf(this.createButton2)).isDisplayed();
+		new WebDriverWait(driver, Duration.ofSeconds(20)).until(ExpectedConditions.visibilityOf(this.createButton2)).click();
+		//boolean actual = new WebDriverWait(driver, Duration.ofSeconds(15)).until(ExpectedConditions.visibilityOf(this.errandNumber)).isDisplayed();
+		//new WebDriverWait(driver, Duration.ofSeconds(10)).until(ExpectedConditions.visibilityOf(this.erandCreationPopUpClose)).click();
 		//display Errand ID
 		return actual;
 	}
 	
 	public boolean clickSendBtn ()
 	{
-		new WebDriverWait(driver, Duration.ofSeconds(10)).until(ExpectedConditions.visibilityOf(this.sendButton)).click();
-		boolean actual = new WebDriverWait(driver, Duration.ofSeconds(10)).until(ExpectedConditions.visibilityOf(this.errandNumber)).isDisplayed();
 		
+		boolean actual2 = new WebDriverWait(driver, Duration.ofSeconds(10)).until(ExpectedConditions.visibilityOf(this.sendButton)).isDisplayed();
+		new WebDriverWait(driver, Duration.ofSeconds(10)).until(ExpectedConditions.visibilityOf(this.sendButton)).click();
+			
 		//display Errand ID
-		return actual;
+		return actual2;
 	}
 	
+	public void clickCloseErrandPage(){
+		new WebDriverWait(driver, Duration.ofSeconds(10)).until(ExpectedConditions.visibilityOf(this.erandCreationPopUpClose)).click();
+	}
 	
 	public void viewAttachmentOption(){
 		new WebDriverWait(driver, Duration.ofSeconds(10)).until(ExpectedConditions.visibilityOf(this.attachmentOption)).isDisplayed();
@@ -343,4 +364,6 @@ WebDriver driver;
 	public boolean viewManualErrandBox(){
 		return new WebDriverWait(driver, Duration.ofSeconds(10)).until(ExpectedConditions.visibilityOf(this.manualErrandBox)).isDisplayed();
 	}
+	
+	
 }

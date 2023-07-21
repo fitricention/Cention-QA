@@ -23,19 +23,19 @@ public class Features {
 	public void enableShowAPopUpMessageOtherContacts()
 	{
 		//String value = new WebDriverWait(driver, 10).until(ExpectedConditions.visibilityOf(this.showAPopupMessageUnderOtherContacts)).getAttribute("value");
-		System.out.println(value);
-		if (value.equals("true"))
-		{
-			System.out.println("Already showAPopupMessageUnderOtherContacts is enabled.");	
-		}
-		else
-		{
-		new WebDriverWait(driver, Duration.ofSeconds(10)).until(ExpectedConditions.visibilityOf(this.showAPopupMessageUnderOtherContacts)).click();
-		Select option = new Select(this.showAPopupMessageUnderOtherContacts);
-		option.selectByVisibleText("true");
-		new WebDriverWait(driver, Duration.ofSeconds(10)).until(ExpectedConditions.visibilityOf(this.setshowAPopupMessageUnderOtherContacts)).click();
-		System.out.println("showAPopupMessageUnderOtherContacts is enabled");	
-		}
+//		System.out.println(value);
+//		if (value.equals("true"))
+//		{
+//			System.out.println("Already showAPopupMessageUnderOtherContacts is enabled.");	
+//		}
+//		else
+//		{
+//		new WebDriverWait(driver, Duration.ofSeconds(10)).until(ExpectedConditions.visibilityOf(this.showAPopupMessageUnderOtherContacts)).click();
+//		Select option = new Select(this.showAPopupMessageUnderOtherContacts);
+//		option.selectByVisibleText("true");
+//		new WebDriverWait(driver, Duration.ofSeconds(10)).until(ExpectedConditions.visibilityOf(this.setshowAPopupMessageUnderOtherContacts)).click();
+//		System.out.println("showAPopupMessageUnderOtherContacts is enabled");	
+//		}
 
 	}
 

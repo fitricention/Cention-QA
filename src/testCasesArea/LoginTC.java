@@ -12,6 +12,8 @@ import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
+import com.aventstack.extentreports.Status;
+
 import base.BaseSetup;
 import pageFactory.LoginPage;
 
@@ -22,6 +24,7 @@ public class LoginTC extends BaseSetup{
 	public void loginToApplication() 
 	{
 		//Log in to application
+		
 		LoginPage objLogin = new LoginPage(driver);
 		String actual = objLogin.loginToApplication("tobias","fitri","123456789");
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));

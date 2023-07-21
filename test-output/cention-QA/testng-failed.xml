@@ -5,7 +5,7 @@
   <listeners>
     <listener class-name="base.Listeners"/>
   </listeners>
-  <test name="login(failed)">
+  <test name="Create Manual Errand(failed)">
     <parameter name="browser" value="chrome"/>
     <classes>
       <class name="testCasesArea.ErrandAndWorkflowTC">
@@ -14,8 +14,9 @@
           <include name="verifySendManualErrand_03"/>
           <include name="Base"/>
           <include name="loginToApplication"/>
+          <include name="verifyCreateManualErrand_02"/>
         </methods>
       </class> <!-- testCasesArea.ErrandAndWorkflowTC -->
     </classes>
-  </test> <!-- login(failed) -->
+  </test> <!-- Create Manual Errand(failed) -->
 </suite> <!-- Failed suite [cention-QA] -->

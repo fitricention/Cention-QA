@@ -20,7 +20,8 @@ public class Listeners extends BaseSetup implements ITestListener{
 	public void onTestStart(ITestResult result) {
 		// TODO Auto-generated method stub
 		test = extent.createTest(result.getMethod().getMethodName());
-		extentTest.set(test);//unique thread id(ErrorValidationTest)->test
+		extentTest.set(test);//unique thread id
+		test.log(Status.INFO, "Successfully running....");
 	}
 
 	@Override
@@ -33,7 +34,7 @@ public class Listeners extends BaseSetup implements ITestListener{
 	@Override
 	public void onTestFailure(ITestResult result) {
 		// TODO Auto-generated method stub
-		extentTest.get().fail(result.getThrowable());//
+		extentTest.get().fail(result.getThrowable());
 		
 		try {
 			driver = (WebDriver) result.getTestClass().getRealClass().getField("driver")
@@ -54,6 +55,7 @@ public class Listeners extends BaseSetup implements ITestListener{
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		extentTest.get().log(Status.FAIL, "Test Failed");
 		extentTest.get().addScreenCaptureFromPath(filePath, result.getMethod().getMethodName());
 		
 		

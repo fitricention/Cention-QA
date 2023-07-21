@@ -23,7 +23,7 @@ public class ErrandAndWorkflowTC extends BaseSetup{
 			driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));			
 		}
 		
-		@Test
+		@Test(enabled=true)
 		public void verifyAllComponentsInManualErrandPage_01(){
 			
 			CreateErrand objCreateErrand = new CreateErrand(driver);
@@ -32,10 +32,11 @@ public class ErrandAndWorkflowTC extends BaseSetup{
 			objCreateErrand.viewErrandID();
 			objCreateErrand.viewErrandTypesBox();
 			Assert.assertTrue(objCreateErrand.viewManualErrandBox());
+
 		}
 		
 		
-		@Test
+		@Test(enabled=true)
 		public void verifyCreateManualErrand_02() throws AWTException{
 		//To verify errand is successfully created in "All errands" folder	
 			CreateErrand objCreateErrand = new CreateErrand(driver);
@@ -44,10 +45,12 @@ public class ErrandAndWorkflowTC extends BaseSetup{
 			objCreateErrand.fillSubject("Test Create Errand - Automation");
 			objCreateErrand.enterTextInAnswerField("This is test Manual errand created by Automation tool - Fitri");	
 
-			Assert.assertTrue(objCreateErrand.clickCreateErrandBtn());
+			Assert.assertEquals(true, objCreateErrand.clickCreateErrandBtn());
+			objCreateErrand.clickCloseErrandPage();
+
 		}
 		
-		@Test
+		@Test(enabled=true)
 		public void verifySendManualErrand_03() throws AWTException{
 			CreateErrand objCreateErrand = new CreateErrand(driver);
 			objCreateErrand.clickCreateButton();
@@ -55,9 +58,10 @@ public class ErrandAndWorkflowTC extends BaseSetup{
 			objCreateErrand.clickSelectArea();
 			objCreateErrand.fillToField("centionqa@gmail.com");
 			objCreateErrand.fillSubject("Test Send Errand - Automation");
-			objCreateErrand.enterTextInAnswerField("This is test Manual errand sent by Automation tool - Fitri");	
+			objCreateErrand.enterTextInAnswerFieldSendErrand("This is test Manual errand sent by Automation tool - Fitri");
 			
 			Assert.assertTrue(objCreateErrand.clickSendBtn());
+		
 		}
 		
 

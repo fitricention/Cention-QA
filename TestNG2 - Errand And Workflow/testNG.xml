@@ -6,17 +6,16 @@
 	<listener class-name="base.Listeners"/>
 </listeners>
 
-<test name="login">
+<test name="Create Manual Errand">
 <parameter name="browser" value="chrome"/>
 	<classes>
 		<class name="testCasesArea.ErrandAndWorkflowTC">
 			<methods>
-				<include name="verifyAllComponentsInManualErrandPage_01"/>
-			    <include name="verifyCreateManualErrand_02"/>
-			    <include name="verifySendManualErrand_03"/>	    
+			    <include name="verifyAllComponentsInManualErrandPage_01"/>
+				<include name="verifyCreateManualErrand_02"/>
+				<include name="verifySendManualErrand_03"/>
 			</methods>
 		</class>
-
 	</classes>
 </test>
 </suite>
