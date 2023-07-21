@@ -2,12 +2,12 @@
 <testng-results skipped="0" failed="0" total="3" passed="3">
   <reporter-output>
   </reporter-output>
-  <suite name="cention-QA" duration-ms="32745" started-at="2023-07-21T02:35:00Z" finished-at="2023-07-21T02:35:32Z">
+  <suite name="cention-QA" duration-ms="31973" started-at="2023-07-21T06:31:03Z" finished-at="2023-07-21T06:31:35Z">
     <groups>
     </groups>
-    <test name="Create Manual Errand" duration-ms="32745" started-at="2023-07-21T02:35:00Z" finished-at="2023-07-21T02:35:32Z">
+    <test name="Create Manual Errand" duration-ms="31973" started-at="2023-07-21T06:31:03Z" finished-at="2023-07-21T06:31:35Z">
       <class name="testCasesArea.ErrandAndWorkflowTC">
-        <test-method status="PASS" signature="Base(java.lang.String)[pri:0, instance:testCasesArea.ErrandAndWorkflowTC@45afc369]" name="Base" is-config="true" duration-ms="4821" started-at="2023-07-21T10:35:00Z" finished-at="2023-07-21T10:35:04Z">
+        <test-method status="PASS" signature="Base(java.lang.String)[pri:0, instance:testCasesArea.ErrandAndWorkflowTC@45afc369]" name="Base" is-config="true" duration-ms="4029" started-at="2023-07-21T14:31:03Z" finished-at="2023-07-21T14:31:07Z">
           <params>
             <param index="0">
               <value>
@@ -18,23 +18,23 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Base -->
-        <test-method status="PASS" signature="loginToApplication()[pri:0, instance:testCasesArea.ErrandAndWorkflowTC@45afc369]" name="loginToApplication" is-config="true" duration-ms="4475" started-at="2023-07-21T10:35:04Z" finished-at="2023-07-21T10:35:09Z">
+        <test-method status="PASS" signature="loginToApplication()[pri:0, instance:testCasesArea.ErrandAndWorkflowTC@45afc369]" name="loginToApplication" is-config="true" duration-ms="3831" started-at="2023-07-21T14:31:07Z" finished-at="2023-07-21T14:31:10Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- loginToApplication -->
-        <test-method status="PASS" signature="verifyAllComponentsInManualErrandPage_01()[pri:0, instance:testCasesArea.ErrandAndWorkflowTC@45afc369]" name="verifyAllComponentsInManualErrandPage_01" duration-ms="2192" started-at="2023-07-21T10:35:09Z" finished-at="2023-07-21T10:35:11Z">
+        <test-method status="PASS" signature="verifyAllComponentsInManualErrandPage_01()[pri:0, instance:testCasesArea.ErrandAndWorkflowTC@45afc369]" name="verifyAllComponentsInManualErrandPage_01" duration-ms="2400" started-at="2023-07-21T14:31:11Z" finished-at="2023-07-21T14:31:13Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyAllComponentsInManualErrandPage_01 -->
-        <test-method status="PASS" signature="verifyCreateManualErrand_02()[pri:0, instance:testCasesArea.ErrandAndWorkflowTC@45afc369]" name="verifyCreateManualErrand_02" duration-ms="10298" started-at="2023-07-21T10:35:11Z" finished-at="2023-07-21T10:35:21Z">
+        <test-method status="PASS" signature="verifyCreateManualErrand_02()[pri:0, instance:testCasesArea.ErrandAndWorkflowTC@45afc369]" name="verifyCreateManualErrand_02" duration-ms="10944" started-at="2023-07-21T14:31:13Z" finished-at="2023-07-21T14:31:24Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyCreateManualErrand_02 -->
-        <test-method status="PASS" signature="verifySendManualErrand_03()[pri:0, instance:testCasesArea.ErrandAndWorkflowTC@45afc369]" name="verifySendManualErrand_03" duration-ms="10764" started-at="2023-07-21T10:35:21Z" finished-at="2023-07-21T10:35:32Z">
+        <test-method status="PASS" signature="verifySendManualErrand_03()[pri:0, instance:testCasesArea.ErrandAndWorkflowTC@45afc369]" name="verifySendManualErrand_03" duration-ms="10397" started-at="2023-07-21T14:31:24Z" finished-at="2023-07-21T14:31:34Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifySendManualErrand_03 -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:testCasesArea.ErrandAndWorkflowTC@45afc369]" name="tearDown" is-config="true" duration-ms="183" started-at="2023-07-21T10:35:32Z" finished-at="2023-07-21T10:35:32Z">
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:testCasesArea.ErrandAndWorkflowTC@45afc369]" name="tearDown" is-config="true" duration-ms="362" started-at="2023-07-21T14:31:34Z" finished-at="2023-07-21T14:31:35Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->

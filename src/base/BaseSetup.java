@@ -3,10 +3,6 @@ package base;
 
 import java.io.File;
 import java.io.IOException;
-import java.net.URL;
-import java.time.Duration;
-import java.util.concurrent.TimeUnit;
-
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
@@ -16,9 +12,6 @@ import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxProfile;
 import org.openqa.selenium.ie.InternetExplorerDriver;
-import org.openqa.selenium.remote.CapabilityType;
-import org.openqa.selenium.remote.DesiredCapabilities;
-import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Parameters;
@@ -28,8 +21,7 @@ import org.testng.annotations.Parameters;
 public class BaseSetup {
 	public static WebDriver driver;
 	String browser;
-	
-	
+
 	@Parameters("browser")
 	@BeforeClass
 	public  WebDriver Base(String browser) throws Exception

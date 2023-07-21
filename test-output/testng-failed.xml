@@ -10,6 +10,7 @@
     <classes>
       <class name="testCasesArea.ErrandAndWorkflowTC">
         <methods>
+          <include name="verifyAllComponentsInManualErrandPage_01"/>
           <include name="tearDown"/>
           <include name="verifySendManualErrand_03"/>
           <include name="Base"/>
