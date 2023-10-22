@@ -4,9 +4,11 @@ package pageFactory;
 import java.time.Duration;
 import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.PageFactory;
@@ -42,7 +44,7 @@ public class LoginPage extends BaseSetup{
 	WebElement lockErrorMessage;
 	
 	//@FindBy(css="[data-qa-id='QA_headerUserProfile']")
-	@FindBy(xpath="/html/body/div[1]/div/main/div[2]/div/div/section/div[1]/div[2]/ul/ul[1]/div[3]")
+	@FindBy(xpath="/html/body/div[1]/div/div/main/div[2]/div/div/section/div[1]/div[2]/ul/ul[1]/div[3]")
 	WebElement userProfile;
 	
 	@FindBy(how = How.ID, using = "workspace")
@@ -50,6 +52,25 @@ public class LoginPage extends BaseSetup{
 	
 	@FindBy(how = How.ID, using = "submit")
 	WebElement cloudLoginButton;
+	
+	@FindBy(xpath="/html/body/div[5]/div/div/div/div/ul/li[2]/div[2]/div/div/ul/li[1]/a/div[2]/span/span")
+	WebElement userPreference;
+	
+	@FindBy(how = How.CSS, using="[data-qa-id='selection-box-twofa_flag']")
+	WebElement qr2faoption;
+	
+	@FindBy(xpath="/html/body/div[1]/div/div[4]/div/div[1]/div[1]")
+	WebElement PrefBox;
+	
+	@FindBy(how = How.CSS, using="[data-qa-id='select-list-Yes']")
+	WebElement selectYes;
+	
+	@FindBy(how = How.CSS, using="[data-qa-id='btn-Save']")
+	WebElement buttonSave;
+	
+	@FindBy(xpath="/html/body/div[1]/div/div/div[4]/div/div[2]")
+	WebElement exit;
+	
 	
 	public LoginPage(WebDriver driver)
 	{
@@ -120,6 +141,16 @@ public class LoginPage extends BaseSetup{
 		new WebDriverWait(driver, Duration.ofSeconds(20)).until(ExpectedConditions.visibilityOf(this.logout)).click();
 	}
 	
+	
+	public void clickUserPreference()
+	{
+		//new WebDriverWait(driver, Duration.ofSeconds(20)).until(ExpectedConditions.visibilityOf(this.userProfile)).click();
+		Actions action = new Actions(driver);
+		action.moveToElement(userProfile).perform();
+		new WebDriverWait(driver, Duration.ofSeconds(20)).until(ExpectedConditions.visibilityOf(this.userPreference)).click();
+		
+	}
+	
 	public boolean verifyLogout(){
 		if(new WebDriverWait(driver, Duration.ofSeconds(20)).until(ExpectedConditions.visibilityOf(this.centionLogo)).isDisplayed()){
 			return true;
@@ -151,5 +182,29 @@ public class LoginPage extends BaseSetup{
 			String errorMessage = new WebDriverWait(driver, Duration.ofSeconds(20)).until(ExpectedConditions.visibilityOf(this.login_errormessage)).getText();
 			return errorMessage;
 		}
+	}
+	
+	// Test Case = Failed
+	public void verify2FACode(){
+		
+		Actions action = new Actions(driver);
+		action.moveToElement(PrefBox).perform();
+		new WebDriverWait(driver, Duration.ofSeconds(20)).until(ExpectedConditions.visibilityOf(this.qr2faoption)).click();
+		new WebDriverWait(driver, Duration.ofSeconds(20)).until(ExpectedConditions.visibilityOf(this.selectYes)).click();
+		//Codes for checking QR Code exist
+			
+	}
+	
+	public void closePreferencePage(){
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+
+        // Scroll down using JavaScript
+        js.executeScript("window.scrollBy(0, 300);");
+        new WebDriverWait(driver, Duration.ofSeconds(20)).until(ExpectedConditions.visibilityOf(this.buttonSave)).click();
+               
+	}
+	
+	public void exitPrefPage(){
+		 new WebDriverWait(driver, Duration.ofSeconds(20)).until(ExpectedConditions.visibilityOf(this.exit)).click();
 	}
 }
