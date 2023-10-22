@@ -1,0 +1,11 @@
+<suite name="cention-QA">
+<listeners>
+<listener class-name="base.Listeners"/>
+</listeners>
+<test name="Administration">
+<parameter name="browser" value="chrome"/>
+<classes>
+<class name="testCasesArea.AdministrationTC"/>
+</classes>
+</test>
+</suite>
