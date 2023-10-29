@@ -32,9 +32,26 @@ WebDriver driver;
 	@FindBy(how = How.XPATH, using="//*[@id='AdminGroup']/div[1]/div[1]/div/div/div[1]/h2")
 	WebElement groupTitle;
 	
-	@FindBy(how = How.CSS, using="[data-qa-id='table-btn-Create New']")
+	//@FindBy(how = How.CSS, using="[data-qa-id='table-btn-Create New']")
+	//WebElement addNewButton;
+	
+	@FindBy(how = How.XPATH, using="/html/body/div[1]/div/div/main/div[3]/div/div/section/div[2]/div[2]/div/div[1]/div[1]/div/div/div[2]/button[2]/i")
 	WebElement addNewButton;
 	
+	@FindBy(how = How.CSS, using="[data-qa-id='text-field-input-name']")
+	WebElement nameField;
+	
+	@FindBy(how = How.CSS, using="[data-qa-id='text-field-input-description']")
+	WebElement descriptionField;
+	
+	@FindBy(how = How.CSS, using="[data-qa-id='anchor_undefined']")
+	WebElement areaField;
+	
+	@FindBy(how = How.XPATH, using="/html/body/div[1]/div/div/main/div[2]/div/div/section/div[2]/div[2]/div/div[2]/div[2]/section/div/div[1]/form/div[1]/div[3]/div/div[2]/div/div/div/div/div/div[3]/div[1]/div/div/div")
+	WebElement area_ABC_Orgz;
+	
+	@FindBy(how = How.CSS, using="[data-qa-id='table-btn-Save']")
+	WebElement saveButton;
 	
 	
 	public void clickGroupMenu(){
@@ -49,8 +66,20 @@ WebDriver driver;
 	   return actual;
 	}
 	
-	public void clickAddNewButton(){
-
-		}
+	public void createNewGroup(){
+		new WebDriverWait(driver, Duration.ofSeconds(50)).until(ExpectedConditions.visibilityOf(this.addNewButton)).click();
+		
+		new WebDriverWait(driver, Duration.ofSeconds(30)).until(ExpectedConditions.visibilityOf(this.nameField)).click();
+		nameField.sendKeys("New Group");
+		
+		new WebDriverWait(driver, Duration.ofSeconds(30)).until(ExpectedConditions.visibilityOf(this.descriptionField)).click();
+		descriptionField.sendKeys("Group Description");	
+		
+		new WebDriverWait(driver, Duration.ofSeconds(30)).until(ExpectedConditions.visibilityOf(this.areaField)).click();
+		new WebDriverWait(driver, Duration.ofSeconds(30)).until(ExpectedConditions.visibilityOf(this.area_ABC_Orgz)).click();
+		areaField.click();
+		
+		saveButton.click();
+	}
 	
 }
