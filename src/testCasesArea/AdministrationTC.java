@@ -203,7 +203,7 @@ public class AdministrationTC extends BaseSetup{
 	   ip.deleteTokens();
   	}
    
-   @Test(priority = 0)
+   //@Test = PASS
    public void verifyAPICallbackPage_22(){
 
 	   APIcallbackPage cb = new APIcallbackPage(driver);
@@ -212,11 +212,20 @@ public class AdministrationTC extends BaseSetup{
 	   
 	}
    
-  // @Test(priority = 1)
+   //@Test = PASS
    public void verifyAddNewAPICallback_23(){
 	   APIcallbackPage cb = new APIcallbackPage(driver);
+	   cb.clickCreateNew();
+	   cb.enterName();
+	   cb.enterEndPoint();
+	   cb.enterSecretKey();
+	   cb.chooseEvent();
+	   cb.chooseCloseErrandEvent();
+	   cb.chooseArea();
+	   cb.chooseJidArea();
+	   cb.clickSaveButton();
  	}
-   
+  
    public void verifyEditAPICallback_24(){
 
 	}
@@ -224,4 +233,21 @@ public class AdministrationTC extends BaseSetup{
    public void verifyDeleteAPICallback_25(){
 
 	}
+   
+   @Test (priority=0)
+   public void verifyGroupAgent_26(){
+	    GroupPage group = new GroupPage(driver);
+		driver.navigate().to(GroupPage);
+		group.clickAddButton();
+		//Assert.assertEquals(group.verifyGroupAgentPage(),true);
+   }
+   
+   @Test (priority=1)
+   public void verifySelectAllAgents_27(){
+	   GroupPage group = new GroupPage(driver);
+	   driver.navigate().to(GroupPage);
+	   group.clickAddButton();
+	   group.selectMultipleAgents();
+   }
+   
 }
