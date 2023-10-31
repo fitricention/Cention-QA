@@ -53,6 +53,26 @@ WebDriver driver;
 	@FindBy(how = How.CSS, using="[data-qa-id='table-btn-Save']")
 	WebElement saveButton;
 	
+	@FindBy(how = How.XPATH, using="/html/body/div[1]/div/div/main/div[3]/div/div/section/div[2]/div[2]/div/div[2]/div[2]/section/ul/li[1]")
+	WebElement titleGroup;
+	
+	@FindBy(how = How.XPATH, using="/html/body/div[1]/div/div/main/div[3]/div/div/section/div[2]/div[2]/div/div[2]/div[2]/section/div/div[1]/form/div[1]/div[4]/div/div/div[2]/div/div[1]/div/div[1]/h2")
+	WebElement titleAgentInGroup;
+	
+	@FindBy(how = How.CSS, using="[data-qa-id='41']")
+	WebElement agent1;
+	
+	@FindBy(how = How.CSS, using="[data-qa-id='11']")
+	WebElement agent2;
+	
+	@FindBy(how = How.CSS, using="[data-qa-id='42']")
+	WebElement agent3;
+	
+	@FindBy(how = How.CSS, using="[data-qa-id='28']")
+	WebElement agent4;
+	
+	@FindBy(how = How.CSS, using="[data-qa-id='63']")
+	WebElement agent5;
 	
 	public void clickGroupMenu(){
 		new WebDriverWait(driver, Duration.ofSeconds(15)).until(ExpectedConditions.visibilityOf(this.mainMenu)).click();
@@ -64,6 +84,10 @@ WebDriver driver;
 
 	   String actual = groupTitle.getText();
 	   return actual;
+	}
+	
+	public void clickAddButton(){
+		new WebDriverWait(driver, Duration.ofSeconds(50)).until(ExpectedConditions.visibilityOf(this.addNewButton)).click();
 	}
 	
 	public void createNewGroup(){
@@ -82,4 +106,26 @@ WebDriver driver;
 		saveButton.click();
 	}
 	
+	public boolean verifyGroupAgentPage(){
+		String actual = new WebDriverWait(driver, Duration.ofSeconds(30)).until(ExpectedConditions.visibilityOf(this.titleGroup)).getText();
+		String actual2 = new WebDriverWait(driver, Duration.ofSeconds(30)).until(ExpectedConditions.visibilityOf(this.titleAgentInGroup)).getText();
+		
+		System.out.println(actual);
+		System.out.println(actual2);
+		
+		if((actual == "Group") && (actual2 == "Agents in the group")){
+		
+			return true;
+		}else 
+			return false;
+	}
+	
+	public void selectMultipleAgents(){
+		new WebDriverWait(driver, Duration.ofSeconds(30)).until(ExpectedConditions.visibilityOf(this.agent1)).click();
+		new WebDriverWait(driver, Duration.ofSeconds(30)).until(ExpectedConditions.visibilityOf(this.agent2)).click();
+		new WebDriverWait(driver, Duration.ofSeconds(30)).until(ExpectedConditions.visibilityOf(this.agent3)).click();
+		new WebDriverWait(driver, Duration.ofSeconds(30)).until(ExpectedConditions.visibilityOf(this.agent4)).click();
+		new WebDriverWait(driver, Duration.ofSeconds(30)).until(ExpectedConditions.visibilityOf(this.agent5)).click();
+		
+	}
 }
