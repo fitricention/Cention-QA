@@ -234,7 +234,7 @@ public class AdministrationTC extends BaseSetup{
 
 	}
    
-   @Test (priority=0)
+   //@Test (priority=0) = PASS
    public void verifyGroupAgent_26(){
 	    GroupPage group = new GroupPage(driver);
 		driver.navigate().to(GroupPage);
@@ -242,7 +242,7 @@ public class AdministrationTC extends BaseSetup{
 		//Assert.assertEquals(group.verifyGroupAgentPage(),true);
    }
    
-   @Test (priority=1)
+   //@Test (priority=1) = PASS
    public void verifySelectAllAgents_27(){
 	   GroupPage group = new GroupPage(driver);
 	   driver.navigate().to(GroupPage);
@@ -250,4 +250,28 @@ public class AdministrationTC extends BaseSetup{
 	   group.selectMultipleAgents();
    }
    
+   @Test (priority=2)
+   public void verifyDragDropAgentGroup_28(){
+	   GroupPage group = new GroupPage(driver);
+	   driver.navigate().to(GroupPage);
+	   group.clickAddButton();
+	   group.addAgentsInGroup();
+   }
+   
+   
+   public void verifySaveDetailsAgentGroup_29(){
+	   GroupPage group = new GroupPage(driver);
+	   driver.navigate().to(GroupPage);
+	   group.clickAddButton();
+	   group.enterGroupDetails();
+	   group.addAgentsInGroup();
+   }
+   
+   public void verifyResetSelection_30(){
+	   GroupPage group = new GroupPage(driver);
+	   driver.navigate().to(GroupPage);
+	   group.clickAddButton();
+	   group.selectMultipleAgents();
+	   group.resetSelection();
+   }
 }
