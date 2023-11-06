@@ -4,6 +4,8 @@ import java.time.Duration;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Action;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.PageFactory;
@@ -74,6 +76,14 @@ WebDriver driver;
 	@FindBy(how = How.CSS, using="[data-qa-id='63']")
 	WebElement agent5;
 	
+	@FindBy(how = How.XPATH, using="/html/body/div[1]/div/div/main/div[2]/div/div/section/div[2]/div[2]/div/div[2]/div[2]/section/div/div[1]/form/div[1]/div[4]/div/div/div[2]/div/div[2]/div[2]/div[2]")
+	WebElement addedAgentBox;
+	
+	@FindBy(how = How.CSS, using="[data-qa-id='table-btn-Clear']")
+	WebElement clearButton;
+	
+	
+	
 	public void clickGroupMenu(){
 		new WebDriverWait(driver, Duration.ofSeconds(15)).until(ExpectedConditions.visibilityOf(this.mainMenu)).click();
 		administrationMenu.click();
@@ -127,5 +137,34 @@ WebDriver driver;
 		new WebDriverWait(driver, Duration.ofSeconds(30)).until(ExpectedConditions.visibilityOf(this.agent4)).click();
 		new WebDriverWait(driver, Duration.ofSeconds(30)).until(ExpectedConditions.visibilityOf(this.agent5)).click();
 		
+	}
+	
+	public void addAgentsInGroup(){
+		//Creating object of Actions class to build composite actions
+		Actions builder = new Actions(driver);
+
+		//Building a drag and drop action
+		Action dragAndDrop = builder.clickAndHold(agent1)
+		.moveToElement(addedAgentBox)
+		.release(addedAgentBox)
+		.build();
+
+		//Performing the drag and drop action
+		dragAndDrop.perform();
+	}
+	
+	public void enterGroupDetails(){
+		new WebDriverWait(driver, Duration.ofSeconds(30)).until(ExpectedConditions.visibilityOf(this.nameField)).click();
+		nameField.sendKeys("New Group");
+		
+		new WebDriverWait(driver, Duration.ofSeconds(30)).until(ExpectedConditions.visibilityOf(this.descriptionField)).click();
+		descriptionField.sendKeys("Group Description");	
+		
+		new WebDriverWait(driver, Duration.ofSeconds(30)).until(ExpectedConditions.visibilityOf(this.areaField)).click();
+		new WebDriverWait(driver, Duration.ofSeconds(30)).until(ExpectedConditions.visibilityOf(this.area_ABC_Orgz)).click();
+	}
+	
+	public void resetSelection(){
+		new WebDriverWait(driver, Duration.ofSeconds(50)).until(ExpectedConditions.visibilityOf(this.clearButton)).click();
 	}
 }
